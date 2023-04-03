@@ -1,0 +1,193 @@
+{
+	"info": {
+		"_postman_id": "0ac30f1f-02a5-4273-969e-6020f70383bf",
+		"name": "MediCare",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24870390"
+	},
+	"item": [
+		{
+			"name": "GetAllProducts",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 500ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+							"});\r",
+							"pm.test(\"Number of Products are 6\", function () {  \r",
+							"    pm.expect(pm.response.json().length).to.equal(6);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/medicare/json/data/all/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"medicare",
+						"json",
+						"data",
+						"all",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAnalgesicsProducts",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 500ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+							"});\r",
+							"pm.test(\"Category Analgesics contains Diclofenac\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Diclofenac\");\r",
+							"});\r",
+							"pm.test(\"Category Analgesics contains Aceclofenac\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Aceclofenac\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/medicare/json/data/category/2/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"medicare",
+						"json",
+						"data",
+						"category",
+						"2",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAntibioticsProducts",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 500ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+							"});\r",
+							"pm.test(\"Category Antibiotics contains Amoxicillin\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Amoxicillin\");\r",
+							"});\r",
+							"pm.test(\"Category Antibiotics contains Ciprofloxacin\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Ciprofloxacin\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/medicare/json/data/category/3/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"medicare",
+						"json",
+						"data",
+						"category",
+						"3",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAntipyreticsProducts",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 500ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+							"});\r",
+							"pm.test(\"Category Antipyretics contains Paracetamol\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Paracetamol\");\r",
+							"});\r",
+							"pm.test(\"Category Antipyretics contains Combiflame\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Combiflame\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/medicare/json/data/category/1/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"medicare",
+						"json",
+						"data",
+						"category",
+						"1",
+						"products"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
